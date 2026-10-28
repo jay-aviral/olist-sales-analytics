@@ -30,10 +30,33 @@ _To be added after the analysis._
 
 ## Dashboard
 _Screenshots to be added._
-
+**[View the live dashboard](https://jay-aviral.github.io/olist-sales-analytics/)**
 ## Recommendations
 _To be added._
+echo "=== 1. Files Git tracks (what is on GitHub) ==="
+git ls-files
 
+echo; echo "=== 2. Big files tracked (over 5 MB) ==="
+git ls-files | xargs -I{} du -k "{}" 2>/dev/null | awk '$1>5000'
+echo "(blank = good)"
+
+echo; echo "=== 3. Data/db tracked by mistake? ==="
+git ls-files | grep -E "\.csv$|\.db$|\.sqlite|^data/" || echo "None (good)"
+
+echo; echo "=== 4. Secrets tracked? ==="
+git ls-files | grep -iE "kaggle\.json|\.env|token|secret|\.pem|\.key" || echo "None (good)"
+
+echo; echo "=== 5. Secrets inside tracked files? ==="
+git grep -n -iE "KAGGLE_KEY|api[_-]?key|password|token=" -- . ':!README.md' || echo "None (good)"
+
+echo; echo "=== 6. Ignored (local only) ==="
+git status --ignored -s | grep '^!!'
+
+echo; echo "=== 7. Uncommitted changes ==="
+git status -sb
+
+echo; echo "=== 8. .gitignore ==="
+cat .gitignore | grep -vE "^#|^$" | tail -10
 ## Limitations
 _To be added._
 
