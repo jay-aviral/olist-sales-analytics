@@ -1,0 +1,34 @@
+=== Top 10 categories by item revenue (delivered) ===
+             category  items    revenue
+        health_beauty   9465 1233131.72
+        watches_gifts   5859 1166176.98
+       bed_bath_table  10953 1023434.76
+       sports_leisure   8431  954852.55
+computers_accessories   7644  888724.61
+      furniture_decor   8160  711927.69
+           housewares   6795  615628.69
+           cool_stuff   3718  610204.10
+                 auto   4140  578966.65
+                 toys   4030  471286.48
+
+=== Top 10 states by revenue (delivered) ===
+state  orders    revenue
+   SP   40500 5770266.19
+   RJ   12350 2055690.45
+   MG   11354 1819277.61
+   RS    5345  861802.40
+   PR    4923  781919.55
+   SC    3546  595208.40
+   BA    3256  591270.60
+   DF    2080  346146.17
+   GO    1957  334294.22
+   ES    1995  317682.65
+
+=== Repeat customers ===
+ customers  repeat_customers  repeat_pct
+     93358              2801         3.0
+
+=== Late delivery vs review score ===
+delivery  orders  avg_review
+    late    7700        2.57
+ on_time   88653        4.29
